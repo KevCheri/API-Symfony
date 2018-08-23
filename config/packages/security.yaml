@@ -1,0 +1,22 @@
+security:
+
+    providers:
+        your_db_provider:
+            entity:
+                class: App\Entity\User
+                property: apiKey
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            logout: ~
+            stateless: true
+            guard:
+                authenticators:
+                    - App\Security\TokenAuthenticator
+
+
+    access_control:
+
