@@ -48,7 +48,7 @@ class UsersController extends FOSRestController
             /** @var ConstraintViolation $constraintViolation */
             $error = [];
             foreach ($validationErrors as $constraintViolation){
-                $message = $constraintViolation-> getMessage (); // Returns the violation message. (Ex: This value should not be blank).
+                $message = $constraintViolation-> getMessage(); // Returns the violation message. (Ex: This value should not be blank).
                 $propertyPath = $constraintViolation-> getPropertyPath(); // Returns the property path from the root element to the violation. (Ex: Lastname).
                 $error[] = $message . ' ' . $propertyPath;
                 // Handle validation errors
